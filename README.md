@@ -1,0 +1,12 @@
+# WeatherDemo
+## 介绍
+- 一款简易的天气查询软件,在输入框内输入城市名称，即可返回对应的天气和温度
+- 通过将城市名称传给API，API返回相关的JSON文件后，再由第三方库`Gson`解析为相关字段
+## 使用的第三方库
+- okhttp3
+  - [官方页面](https://square.github.io/okhttp/)
+  - [GitHub页面](https://github.com/square/okhttp)
+- Gson
+  - [GitHub页面](https://github.com/google/gson)
+## 后续优化
+- 该软件功能还很不完善，常常发生请求失败，需要后续的改进和优化
