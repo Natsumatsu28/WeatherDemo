@@ -50,6 +50,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * 获取当前城市的天气数据
+     * @param city 城市
+     */
     private void getWeatherData(String city) {
         String apiUrl =
                 "https://api.caiyunapp.com/v2.6/qgJtgRLBY9jWj99P/101.6656,39.2072/weather?dailysteps=3&hourlysteps=48"
@@ -60,11 +64,13 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         client.newCall(request).enqueue(new Callback() {
+            // 网络请求失败
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
                 runOnUiThread(() -> Toast.makeText(MainActivity.this, "网络请求失败",
                         Toast.LENGTH_SHORT).show());
             }
+            // 网络请求成功，返回不同的信息
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response)
                     throws IOException {
